@@ -1,0 +1,8 @@
+<p>
+  <img [src]="imageBaseUrl + selectedCoin.ImageUrl" style="max-width: 100px; height: auto;" >
+  <br>
+  {{ selectedCoin.FullName }}
+</p>
+<select [(ngModel)]="selectedCoin" (ngModelChange)="coinSelect($event)">
+  <option *ngFor="let coinPair of coinsDictionary | mapToIterable" [ngValue]="coinPair.value">{{coinPair.key}}</option>
+</select>
